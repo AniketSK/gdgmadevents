@@ -3,15 +3,7 @@ import 'firebase/auth'
 import 'firebase/firestore'
 import 'firebase/storage'
 import moment from 'moment'
-
-const config = {
-    apiKey: "AIzaSyCAY1A2gh4-B11ebfYLojU2_Erug0C-64c",
-    authDomain: "gdgmadevents.firebaseapp.com",
-    databaseURL: "https://gdgmadevents.firebaseio.com",
-    projectId: "gdgmadevents",
-    storageBucket: "gdgmadevents.appspot.com",
-    messagingSenderId: "561574056380"
-}
+import config from './firebaseConfig'
 
 class Firebase {
 
@@ -28,10 +20,6 @@ class Firebase {
 
     login = (username, password) => {
         return this.auth.signInWithEmailAndPassword(username, password)
-    }
-
-    anonymous = () => {
-        return this.auth.signInAnonymously()
     }
 
     uploadPicture = (folderName, file) => {
